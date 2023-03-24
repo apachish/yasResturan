@@ -1,0 +1,122 @@
+var markers = [
+{
+    "id":1,
+    "type_point":"پیتزا",
+    "location_latitude":35.772374,
+    "location_longitude":51.378061,
+    "map_image_url":"img/thumb_map_single_restaurant.jpg",
+    "rate":"خوب | 7.5",
+    "name_point":"دی آلفردو",
+    "get_directions_start_address":"",
+    "phone":"09141234567",
+    "url_point":"detail-restaurant.html"
+  },
+  {
+    "id":2,
+    "type_point":"برگر",
+    "location_latitude":35.776121,
+    "location_longitude":51.373276,
+    "map_image_url":"img/thumb_map_single_restaurant.jpg",
+    "rate":"خوب | 7.5",
+    "name_point":"برگر",
+    "get_directions_start_address":"",
+    "phone":"09141234567",
+    "url_point":"detail-restaurant.html"
+  },
+  {
+    "id":3,
+    "type_point":"گیاهی",
+    "location_latitude":35.768648,
+    "location_longitude":51.360627,
+    "map_image_url":"img/thumb_map_single_restaurant.jpg",
+    "rate":"خوب | 7.5",
+    "name_point":"ویگو لایف",
+    "get_directions_start_address":"",
+    "phone":"09141234567",
+    "url_point":"detail-restaurant.html"
+  },
+  {
+    "id":4,
+    "type_point":"ژاپنی",
+    "location_latitude":35.778710,
+    "location_longitude":51.360884,
+    "map_image_url":"img/thumb_map_single_restaurant.jpg",
+    "rate":"خوب | 7.5",
+    "name_point":"سوشی تمپل",
+    "get_directions_start_address":"",
+    "phone":"09141234567",
+    "url_point":"detail-restaurant.html"
+  },
+  {
+    "id":5,
+    "type_point":"پیتزا",
+    "location_latitude":35.770493,
+    "location_longitude":51.396676,
+    "map_image_url":"img/thumb_map_single_restaurant.jpg",
+    "rate":"خوب | 7.5",
+    "name_point":"پیتزا پازل",
+    "get_directions_start_address":"",
+    "phone":"09141234567",
+    "url_point":"detail-restaurant.html"
+  },
+  {
+    "id":6,
+    "type_point":"برگر",
+    "location_latitude":48.860819,
+    "location_longitude":2.354507,
+    "map_image_url":"img/thumb_map_single_restaurant.jpg",
+    "rate":"خوب | 7.5",
+    "name_point":"آلانیس",
+    "get_directions_start_address":"",
+    "phone":"09141234567",
+    "url_point":"detail-restaurant.html"
+  },
+  {
+    "id":7,
+    "type_point":"چینی",
+    "location_latitude":35.77728,
+    "location_longitude":51.381741,
+    "map_image_url":"img/thumb_map_single_restaurant.jpg",
+    "rate":"خوب | 7.5",
+    "name_point":"آلانیس",
+    "get_directions_start_address":"",
+    "phone":"09141234567",
+    "url_point":"detail-restaurant.html"
+  },
+  {
+    "id":8,
+    "type_point":"سوشی",
+    "location_latitude":48.862880,
+    "location_longitude":2.287205,
+    "map_image_url":"img/thumb_map_single_restaurant.jpg",
+    "rate":"خوب | 7.5",
+    "name_point":"برج دراگون",
+    "get_directions_start_address":"",
+    "phone":"09141234567",
+    "url_point":"detail-restaurant.html"
+  },
+  {
+    "id":9,
+    "type_point":"مکزیکی",
+    "location_latitude":35.768509,
+    "location_longitude":51.373330,
+    "map_image_url":"img/thumb_map_single_restaurant.jpg",
+    "rate":"خوب | 7.5",
+    "name_point":"ال پاسو",
+    "get_directions_start_address":"",
+    "phone":"09141234567",
+    "url_point":"detail-restaurant.html"
+  },
+  {
+    "id":10,
+    "type_point":"نان تست",
+    "location_latitude":35.766419,
+    "location_longitude":51.380883,
+    "map_image_url":"img/thumb_map_single_restaurant.jpg",
+    "rate":"خوب | 7.5",
+    "name_point":"مونالیزا",
+    "get_directions_start_address":"",
+    "phone":"09141234567",
+    "url_point":"detail-restaurant.html"
+  }
+];

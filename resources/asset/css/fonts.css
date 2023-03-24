@@ -1,0 +1,103 @@
+/* IRANYekan font */
+@font-face {
+	font-family: iranyekan;
+	font-style: normal;
+	font-weight: bold;
+	src: url('../fonts/IRANYekan/eot/iranyekanwebboldfanum.eot');
+	src: url('../fonts/IRANYekan/eot/iranyekanwebboldfanum.eot?#iefix') format('embedded-opentype'),
+		 url('../fonts/IRANYekan/woff/iranyekanwebboldfanum.woff') format('woff'),
+		 url('../fonts/IRANYekan/ttf/iranyekanwebboldfanum.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: iranyekan;
+	font-style: normal;
+	font-weight: 100;
+	src: url('../fonts/IRANYekan/eot/iranyekanwebthinfanum.eot');
+	src: url('../fonts/IRANYekan/eot/iranyekanwebthinfanum.eot?#iefix') format('embedded-opentype'),
+		 url('../fonts/IRANYekan/woff/iranyekanwebthinfanum.woff') format('woff'),
+		 url('../fonts/IRANYekan/ttf/iranyekanwebthinfanum.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: iranyekan;
+	font-style: normal;
+	font-weight: 300;
+	src: url('../fonts/IRANYekan/eot/iranyekanweblightfanum.eot');
+	src: url('../fonts/IRANYekan/eot/iranyekanweblightfanum.eot?#iefix') format('embedded-opentype'),
+		 url('../fonts/IRANYekan/woff/iranyekanweblightfanum.woff') format('woff'),
+		 url('../fonts/IRANYekan/ttf/iranyekanweblightfanum.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: iranyekan;
+	font-style: normal;
+	font-weight: normal;
+	src: url('../fonts/IRANYekan/eot/iranyekanwebregularfanum.eot');
+	src: url('../fonts/IRANYekan/eot/iranyekanwebregularfanum.eot?#iefix') format('embedded-opentype'),
+		 url('../fonts/IRANYekan/woff/iranyekanwebregularfanum.woff') format('woff'),
+		 url('../fonts/IRANYekan/ttf/iranyekanwebregularfanum.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: iranyekan;
+	font-style: normal;
+	font-weight: 500;
+	src: url('../fonts/IRANYekan/eot/iranyekanwebmediumfanum.eot');
+	src: url('../fonts/IRANYekan/eot/iranyekanwebmediumfanum.eot?#iefix') format('embedded-opentype'),
+		 url('../fonts/IRANYekan/woff/iranyekanwebmediumfanum.woff') format('woff'),
+		 url('../fonts/IRANYekan/ttf/iranyekanwebmediumfanum.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: iranyekan;
+	font-style: normal;
+	font-weight: 800;
+	src: url('../fonts/IRANYekan/eot/iranyekanwebextraboldfanum.eot');
+	src: url('../fonts/IRANYekan/eot/iranyekanwebextraboldfanum.eot?#iefix') format('embedded-opentype'),
+		 url('../fonts/IRANYekan/woff/iranyekanwebextraboldfanum.woff') format('woff'),
+		 url('../fonts/IRANYekan/ttf/iranyekanwebextraboldfanum.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: iranyekan;
+	font-style: normal;
+	font-weight: 850;
+	src: url('../fonts/IRANYekan/eot/iranyekanwebblackfanum.eot');
+	src: url('../fonts/IRANYekan/eot/iranyekanwebblackfanum.eot?#iefix') format('embedded-opentype'),
+		 url('../fonts/IRANYekan/woff/iranyekanwebblackfanum.woff') format('woff'),
+		 url('../fonts/IRANYekan/ttf/iranyekanwebblackfanum.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: iranyekan;
+	font-style: normal;
+	font-weight: 900;
+	src: url('../fonts/IRANYekan/eot/iranyekanwebextrablackfanum.eot');
+	src: url('../fonts/IRANYekan/eot/iranyekanwebextrablackfanum.eot?#iefix') format('embedded-opentype'),
+		 url('../fonts/IRANYekan/woff/iranyekanwebextrablackfanum.woff') format('woff'),
+		 url('../fonts/IRANYekan/ttf/iranyekanwebextrablackfanum.ttf') format('truetype');
+}
+
+/* IRANSans font */
+@font-face {
+    font-family: 'iransans';
+    src: url('../fonts/IRANSans/IRANSansXV.woff') format('woff-variations'),
+    url('../fonts/IRANSans/IRANSansXV.woff') format('woff');
+    font-weight: 100 900;
+    font-display: fallback;
+}
+@font-face {
+    font-family: 'iransans';
+    src: url('../fonts/IRANSans/IRANSansXV.woff2') format('woff2-variations'),
+    url('../fonts/IRANSans/IRANSansXV.woff2') format('woff2');
+    font-weight: 100 900;
+    font-display: fallback;
+}
+@font-face {
+    font-family: 'iransans';
+    src: url('../fonts/IRANSans/IRANSansXV.ttf') format('truetype-variations'),
+    url('../fonts/IRANSans/IRANSansXV.ttf') format('truetype');
+    font-weight: 100 900;
+    font-display: fallback;
+}
