@@ -376,8 +376,10 @@ return [
     "Create Food"=>"ایجاد غذا",
     "Edit Food"=>"ویرایش غذا",
     "List Food"=>"لیست غذا",
+    "List Slides"=>"لیست اسلاید",
     "Close"=>"لغو",
     "Menu Created"=>"منو ایجاد شد",
+
     "Unfortunately, there was an error in creating the menu"=>"متأسفانه در ایجاد منو خطایی رخ داد",
     "Menu Edited"=>"منو ویرایش شد",
     "Unfortunately, there was an error in editing the menu"=>"متأسفانه در ویرایش منو خطایی رخ داد",
@@ -392,4 +394,5 @@ return [
     "Unfortunately, there was an error in creating the food"=>"متأسفانه در ایجاد غذا خطایی رخ داد",
     "Food Edited"=>"غذا ویرایش شد",
     "Unfortunately, there was an error in editing the food"=>"متأسفانه در ویرایش غذا خطایی رخ داد",
+    "Photo Preview"=>"پیش نمایش"
 ];

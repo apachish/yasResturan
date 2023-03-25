@@ -11,7 +11,7 @@ use Intervention\Image\Facades\Image;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 
-class CreateUpateFood extends Component
+class CreateUpdateFood extends Component
 {
     use WithFileUploads;
 
@@ -19,6 +19,7 @@ class CreateUpateFood extends Component
     public $food_id;
     public $menu_ids;
     public $categories = [];
+    public $upload;
 
 
 
@@ -84,8 +85,11 @@ class CreateUpateFood extends Component
             data_set($this->food,'price' , (str_replace(',', '', str_replace("ریال", "", data_get($this->food,'price')))));
         $this->validate();
         if($this->food) {
+            if($this->upload)
+                $this->food->image = $this->uploadFile();
             $this->food->update([
                 'title' => $this->food->title,
+                'image' => $this->food->image,
                 'price' => $this->food->price,
                 'description' => $this->food->description,
                 'category_id' => $this->food->category_id,
@@ -107,25 +111,25 @@ class CreateUpateFood extends Component
 
     public function render()
     {
-        return view('livewire.admin.create-upate-food');
+        return view('livewire.admin.create-update-food');
     }
 
     private function uploadFile(): string
     {
 
-        if ($this->article->image && file_exists(public_path("images/articles/" . $this->article->image))) {
-            unlink(public_path("images/articles/" . $this->article->image));
+        if ($this->food->image && file_exists(public_path("images/foods/" . $this->food->image))) {
+            unlink(public_path("images/foods/" . $this->food->image));
         }
 
-        $name = Str::slug($this->article->title).'_'.time() .".". $this->upload->getClientOriginalExtension();
+        $name = Str::slug($this->food->title).'_'.time() .".". $this->upload->getClientOriginalExtension();
 
-        //$this->upload->storeAs("articles",$name,"public_images");
+        //$this->upload->storeAs("foods",$name,"public_images");
 
         $image = Image::make($this->upload);
         $width = 463;
         $height = 263;
         $image->resize($width, $height);
-        $image->save(public_path("images/articles/" . $name));
+        $image->save(public_path("images/foods/" . $name));
 
         return $name;
 

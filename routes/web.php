@@ -35,22 +35,22 @@ Route::middleware(['auth'])->namespace("App\Http\Livewire\Admin")->prefix('admin
     Route::get('/categories/create', CreateUpdateCategory::class)->name('categories-create');
     Route::get('/categories/edit/{category_id}', CreateUpdateCategory::class)->name('categories-edit');
     Route::get('/foods', Foods::class)->name('foods');
-    Route::get('/foods/create', CreateUpateFood::class)->name('foods-create');
-    Route::get('/foods/edit/{food_id}', CreateUpateFood::class)->name('foods-edit');
+    Route::get('/foods/create', CreateUpdateFood::class)->name('foods-create');
+    Route::get('/foods/edit/{food_id}', CreateUpdateFood::class)->name('foods-edit');
     Route::get('/slides', Slides::class)->name('slides');
-    Route::get('/slides/create', Slides::class)->name('slides-create');
-    Route::get('/slides/edit', Slides::class)->name('slides-edit');
+    Route::get('/slides/create', CreateUpdateSlide::class)->name('slides-create');
+    Route::get('/slides/edit/{slide_id}', CreateUpdateSlide::class)->name('slides-edit');
 
     Route::get('/foods/popular', PopularFoods::class)->name('popular-foods');
-    Route::get('/foods/popular/create', PopularFoods::class)->name('popular-foods-create');
-    Route::get('/foods/popular/edit/{item_id}', PopularFoods::class)->name('popular-foods-edit');
+    Route::get('/foods/popular/create', CreateUpdatePopularFood::class)->name('popular-foods-create');
+    Route::get('/foods/popular/edit/{item_id}', CreateUpdatePopularFood::class)->name('popular-foods-edit');
     Route::get('/sms/send', Sms::class)->name('sms-send');
     Route::get('/sms/template', Sms::class)->name('sms-template');
     Route::get('/sms', Sms::class)->name('sms');
     Route::get('/profile', Profile::class)->name('profile');
     Route::get('/users', Users::class)->name('users');
-    Route::get('/users/create', Users::class)->name('users-create');
-    Route::get('/users/edit/{user_id}', Users::class)->name('users-edit');
+    Route::get('/users/create', CreateUpateUser::class)->name('users-create');
+    Route::get('/users/edit/{user_id}', CreateUpateUser::class)->name('users-edit');
     Route::get('/logout', function (\Illuminate\Http\Request $request){
         \Illuminate\Support\Facades\Auth::logout();
         return redirect('/login');

@@ -110,6 +110,26 @@
                     </div>
                     @enderror
             </div>
+            <div class="mb-6">
+                <input type="file"  wire:model.defer="upload" class="form-control @error('upload')is-invalid @elseif($upload)  is-valid @enderror" aria-label="file example" required>
+                @error('upload')
+                <div id="validationServerUsernameFeedback" class="invalid-feedback">
+                    {{ $message }}
+                </div>
+                @elseif($upload)
+                    <div class="valid-feedback">
+                        درست می باشد
+                    </div>
+                    @enderror
+                    @if ($upload)
+                        {{__("messages.Photo Preview")}}:
+                        <img src="{{ $upload->temporaryUrl() }}" width="100" height="100">
+                    @elseif(data_get($food,'image'))
+                        <img src="{{asset("/images/foods/".data_get($food,'image'))}}" width="100" height="100">
+
+                    @endif
+
+            </div>
             <div class="col-md-4"></div>
             <div class="col-md-4"></div>
             <div class="col-md-4">

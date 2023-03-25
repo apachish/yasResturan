@@ -19,10 +19,9 @@
           دسر هم کرم بروله بهترین انتخاب خواهد بود. کرم بروله دسر فرانسوی خوشمزه ایه که مواد اولیه اصلیش خامه و زرده تخم مرغه. بافت داخلی این دسر، نرم و کرم ماننده اما لایه روییش ترد و کاراملی است. ویژگی اصلی کرم بروله روکش کاراملیشه که حالت سوخته داره. بروله (brûlée) در زبان فرانسه به معنی سوخته هست. حالت کاراملی سوخته کرم بروله با نگه داشتن فندک مخصوص روی این دسر ایجاد می شه.
           میسیز پش ملبا گرفت که میکس بستنی و کمپوت هلو و گیلاس و خامه بود و خوشمزه بود. محیطش هم فوق العادس و می تونین کلی لذت ببرید. پروتکل های بهداشتی هم کاملا رعایت می شه و می تونین با خیال راحت اونجا غذا بخورید.">
     <meta property="og:image" content="https://restaurantyas.ir/images/logo.png">
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 @stack('styles')
-@stack('scripts')
 <!-- Fonts and icons     -->
     <!-- Nucleo Icons -->
     @livewireStyles
@@ -89,6 +88,8 @@
     }
 
 </script>
+@stack('scripts')
+
 <!-- Custom scripts for this page-->
 @livewireScripts
 </body>
