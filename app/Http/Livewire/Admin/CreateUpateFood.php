@@ -5,11 +5,16 @@ namespace App\Http\Livewire\Admin;
 use App\Models\Category;
 use App\Models\Food;
 use App\Models\Menu as MenuAlias;
+use Illuminate\Support\Str;
 use Illuminate\Validation\Rule;
+use Intervention\Image\Facades\Image;
 use Livewire\Component;
+use Livewire\WithFileUploads;
 
 class CreateUpateFood extends Component
 {
+    use WithFileUploads;
+
     public $food;
     public $food_id;
     public $menu_ids;
@@ -43,6 +48,7 @@ class CreateUpateFood extends Component
             'food.price' => 'required|string',
             'food.description' => 'nullable|string',
             'food.category_id' => 'required|exists:categories,id',
+            'upload' => $this->food_id?'nullable|mimes:jpeg,jpg,png|max:10240':'required|mimes:jpeg,jpg,png|max:10240',
             'menu_ids' => 'nullable|array',
             'menu_ids.*' => 'nullable|exists:menus,id',
             'food.status'=>['required',Rule::in([
@@ -59,7 +65,8 @@ class CreateUpateFood extends Component
         if(data_get($this->food,'price'))
             data_set($this->food,'price' , (str_replace(',', '', str_replace("ریال", "", data_get($this->food,'price')))));
         $this->validate();
-
+        if($this->upload)
+            $this->food->image = $this->uploadFile();
         $this->food = $this->food->create($this->food->toArray());
         $this->food->menus()->sync($this->menu_ids);
 
@@ -101,5 +108,26 @@ class CreateUpateFood extends Component
     public function render()
     {
         return view('livewire.admin.create-upate-food');
+    }
+
+    private function uploadFile(): string
+    {
+
+        if ($this->article->image && file_exists(public_path("images/articles/" . $this->article->image))) {
+            unlink(public_path("images/articles/" . $this->article->image));
+        }
+
+        $name = Str::slug($this->article->title).'_'.time() .".". $this->upload->getClientOriginalExtension();
+
+        //$this->upload->storeAs("articles",$name,"public_images");
+
+        $image = Image::make($this->upload);
+        $width = 463;
+        $height = 263;
+        $image->resize($width, $height);
+        $image->save(public_path("images/articles/" . $name));
+
+        return $name;
+
     }
 }
