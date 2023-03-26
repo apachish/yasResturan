@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Menu extends Model
 {
     use HasFactory;
-    protected $fillable = ["id","title","status","slug"];
+    protected $fillable = ["title","status","slug"];
 
     /**
      * Get all of the posts that are assigned this tag.
