@@ -26,7 +26,6 @@ class CreateUpdateSlide extends Component
         if($this->slide_id)
         {
             $this->slide = Slide::find($this->slide_id);
-            $this->menu_ids = $this->slide->menus->pluck("id");
 
         }
         else

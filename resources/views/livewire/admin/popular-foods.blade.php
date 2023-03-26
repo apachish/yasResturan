@@ -24,15 +24,10 @@
                         <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                             {{__("message.ID")}}
                         </th>
+                        <th></th>
 
                         <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                             {{__("message.Title")}}
-                        </th>
-                        <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                            {{__("message.Price")}}
-                        </th>
-                        <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                            {{__("message.Category")}}
                         </th>
                         <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">{{__("message.Status")}}</th>
 
@@ -42,20 +37,9 @@
                     </tr>
                     <tr>
                         <th></th>
+                        <th></th>
                         <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                             <input type="text" class="form-control" wire:model="filter.title">
-                        </th>
-                        <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                            <input type="text" class="form-control" wire:model="filter.price">
-                        </th>
-                        <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                            <select wire:model="filter.category_id" class="form-control"
-                                    aria-describedby="status-addon">
-                                <option value="">انتخاب کنید</option>
-                                @foreach($categories as $category)
-                                    <option value="{{$category->id}}"> {{$category->title}}</option>
-                                @endforeach
-                            </select>
                         </th>
                         <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                             <select wire:model="filter.status" class="form-control"
@@ -71,22 +55,20 @@
                     </tr>
                     </thead>
                     <tbody>
-                    @foreach($foods as  $key=>$food)
+                    @foreach($popular_foods as  $key=>$popular_food)
                         <tr>
                             <td class="ps-4">
                                 <p class="text-xs font-weight-bold mb-0">{{$key+1}}</p>
                             </td>
                             <td class="text-center">
-                                <p class="text-xs font-weight-bold mb-0">{{$food->title}}</p>
+                                <img src="{{asset("images/popular_foods/".$popular_food->image)}}" width="100" height="100"/>
                             </td>
                             <td class="text-center">
-                                <p class="text-xs font-weight-bold mb-0">@convertPrice($food->price)</p>
+                                <p class="text-xs font-weight-bold mb-0">{{$popular_food->title}}</p>
                             </td>
-                            <td class="text-center">
-                                <p class="text-xs font-weight-bold mb-0">{{$food->category?$food->category->title:"-"}}</p>
-                            </td>
+
                             <td class="align-middle text-center text-sm">
-                                @if($food->status=="1")
+                                @if($popular_food->status=="1")
                                     <span class="p-2 mb-2  bg-success text-white">فعال</span>
                                 @else
                                     <span class="p-3 mb-2 bg-danger text-white">غیرفعال</span>
@@ -95,12 +77,12 @@
                             <td class="text-center">
 
                                 <a  class="mx-3"
-                                    href="{{route("foods-edit",["food_id"=>$food->id])}}"
+                                    href="{{route("popular-foods-edit",["popular_food_id"=>$popular_food->id])}}"
                                     data-bs-original-title="Edit Category">
                                     <i class="fa fa-edit"></i>
                                 </a>
                                 <span>
-                                    <i class="fa fa-trash"  data-toggle="modal" data-target="#deleteModal" wire:click="delete('{{$food->id}}')"></i>
+                                    <i class="fa fa-trash"  data-toggle="modal" data-target="#deleteModal" wire:click="delete('{{$popular_food->id}}')"></i>
                                         </span>
                             </td>
                         </tr>

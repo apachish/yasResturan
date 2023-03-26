@@ -42,7 +42,7 @@ class CreateUpdatePopularFood extends Component
     }
 
 
-    public function createUpdateFood()
+    public function createUpdatePopularFood()
     {
         $this->validate();
         if($this->upload)

@@ -6,9 +6,9 @@
                 <a href="{{route("dashboard")}}">{{__("message.Dashboard")}}</a>
             </li>
             @if($popular_food_id)
-                <li class="breadcrumb-item active">{{__("messages.Edit Food")}}</li>
+                <li class="breadcrumb-item active">{{__("messages.Edit Popular Food")}}</li>
             @else
-                <li class="breadcrumb-item active">{{__("messages.Create Food")}}</li>
+                <li class="breadcrumb-item active">{{__("messages.Create Popular Food")}}</li>
             @endif
         </ol>
         <form class="row g-3 mt-5 ml-5">
@@ -68,10 +68,10 @@
             <div class="col-md-4"></div>
             <div class="col-md-4">
                 @if($popular_food_id)
-                    <button type="button" wire:click.prevent="editUpdateFood()"
+                    <button type="button" wire:click.prevent="editUpdatePopularFood()"
                             class="btn btn-info">{{__("message.Edit")}}</button>
                 @else
-                    <button type="button" wire:click.prevent="createUpdateFood()"
+                    <button type="button" wire:click.prevent="createUpdatePopularFood()"
                             class="btn btn-info">{{__("message.Create")}}</button>
                 @endif
             </div>

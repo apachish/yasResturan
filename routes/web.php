@@ -43,7 +43,7 @@ Route::middleware(['auth'])->namespace("App\Http\Livewire\Admin")->prefix('admin
 
     Route::get('/foods/popular', PopularFoods::class)->name('popular-foods');
     Route::get('/foods/popular/create', CreateUpdatePopularFood::class)->name('popular-foods-create');
-    Route::get('/foods/popular/edit/{item_id}', CreateUpdatePopularFood::class)->name('popular-foods-edit');
+    Route::get('/foods/popular/edit/{popular_food_id}', CreateUpdatePopularFood::class)->name('popular-foods-edit');
     Route::get('/sms/send', Sms::class)->name('sms-send');
     Route::get('/sms/template', Sms::class)->name('sms-template');
     Route::get('/sms', Sms::class)->name('sms');

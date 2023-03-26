@@ -376,6 +376,8 @@ return [
     "Create Food"=>"ایجاد غذا",
     "Edit Food"=>"ویرایش غذا",
     "List Food"=>"لیست غذا",
+    "Edit Popular Food"=>"ویرایش غذا محبوب",
+    "List Popular Food"=>"لیست غذا محبوب",
     "List Slides"=>"لیست اسلاید",
     "Close"=>"لغو",
     "Menu Created"=>"منو ایجاد شد",

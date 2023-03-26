@@ -30,7 +30,8 @@ class CreateUpdateFood extends Component
         if($this->food_id)
         {
             $this->food = Food::find($this->food_id);
-            $this->menu_ids = $this->food->menus->pluck("id");
+            if($this->food && $this->food->menus)
+                $this->menu_ids = $this->food->menus->pluck("id");
 
         }
         else
