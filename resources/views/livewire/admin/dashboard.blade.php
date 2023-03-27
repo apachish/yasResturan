@@ -3,9 +3,8 @@
         <!-- Breadcrumbs-->
         <ol class="breadcrumb">
             <li class="breadcrumb-item">
-                <a href="{{route("dashboard")}}index.html">داشبورد</a>
+                <a href="{{route("dashboard")}}">داشبورد</a>
             </li>
-            <li class="breadcrumb-item active">داشبورد</li>
         </ol>
         <div  class="row">
             <div class="col-12">
@@ -33,7 +32,7 @@
                             <i class="fa fa-fw fa-list"></i>
                         </div>
                         <div class="me-5">
-                            <h5>دسته بندی منو (3)</h5>
+                            <h5>دسته بندی منو ({{$menu_count}})</h5>
                         </div>
                     </div>
                     <a class="card-footer text-white clearfix small z-1" href="{{route("menus-create")}}">
@@ -57,7 +56,7 @@
                             <i class="fa fa-fw fa-list"></i>
                         </div>
                         <div class="me-5">
-                            <h5>دسته بندی غذا (20)</h5>
+                            <h5>دسته بندی غذا ({{$category_count}})</h5>
                         </div>
                     </div>
                     <a class="card-footer text-white clearfix small z-1" href="{{route("categories-create")}}">
@@ -81,7 +80,7 @@
                             <i class="fa fa-fw fa-list"></i>
                         </div>
                         <div class="me-5">
-                            <h5>غذا (200)</h5>
+                            <h5>غذا ({{$food_count}})</h5>
                         </div>
                     </div>
                     <a class="card-footer text-white clearfix small z-1" href="{{route("foods-create")}}">
@@ -110,7 +109,7 @@
                             <i class="fa fa-fw fa-star"></i>
                         </div>
                         <div class="me-5">
-                            <h5>اسلاید شو </h5>
+                            <h5>اسلاید شو ({{$slide_count}}) </h5>
                         </div>
                     </div>
                     <a class="card-footer text-white clearfix small z-1" href="{{route("slides-create")}}">
@@ -134,7 +133,7 @@
                             <i class="fa fa-fw fa-star"></i>
                         </div>
                         <div class="me-5">
-                            <h5>غذاهای محبوب</h5>
+                            <h5>غذاهای محبوب ({{$popular_food_count}})</h5>
                         </div>
                     </div>
                     <a class="card-footer text-white clearfix small z-1" href="{{route("popular-foods-create")}}">
