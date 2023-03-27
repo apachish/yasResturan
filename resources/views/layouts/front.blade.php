@@ -34,7 +34,7 @@
 <header class="header clearfix element_to_stick">
     <div class="container">
         <div id="logo">
-            <a href="index.html">
+            <a href="{{route("home")}}">
                 <img src="{{asset("/asset/img/logo.png")}}" width="162" height="35" alt="" class="logo_normal">
                 <img src="{{asset("/asset/img/logo_sticky.png")}}" width="162" height="35" alt="" class="logo_sticky">
             </a>

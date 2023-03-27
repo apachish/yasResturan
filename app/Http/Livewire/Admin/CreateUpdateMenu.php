@@ -48,10 +48,10 @@ class CreateUpdateMenu extends Component
         $menu = $this->menu->create($this->menu->toArray());
         if($menu) {
             session()->flash('message', __("messages.Menu Created"));
-            return redirect()->intended(route("dashboard"));
+            return redirect()->intended(route("menus"));
         }
         session()->flash('error', __("messages.Unfortunately, there was an error in creating the menu"));
-        return redirect()->intended(route("dashboard"));
+        return redirect()->intended(route("menus"));
 
     }
 
@@ -65,11 +65,11 @@ class CreateUpdateMenu extends Component
                 'status' => $this->menu->status
             ]);
             session()->flash('message', __("messages.Menu Edited"));
-            return redirect()->intended(route("dashboard"));
+            return redirect()->intended(route("menus"));
 
         }
         session()->flash('error', __("messages.Unfortunately, there was an error in editing the menu"));
-        return redirect()->intended(route("dashboard"));
+        return redirect()->intended(route("menus"));
 
     }
 

@@ -51,10 +51,10 @@ class CreateUpdatePopularFood extends Component
 
         if($this->popular_food) {
             session()->flash('message', __("messages.Popular Food Created"));
-            return redirect()->intended(route("dashboard"));
+            return redirect()->intended(route("popular-foods"));
         }
         session()->flash('error', __("messages.Unfortunately, there was an error in creating the popular_food"));
-        return redirect()->intended(route("dashboard"));
+        return redirect()->intended(route("popular-foods"));
     }
 
     public function editUpdatePopularFood()
@@ -69,11 +69,11 @@ class CreateUpdatePopularFood extends Component
                 'status' => $this->popular_food->status
             ]);
             session()->flash('message', __("messages.Popular Food Edited"));
-            return redirect()->intended(route("dashboard"));
+            return redirect()->intended(route("popular-foods"));
 
         }
         session()->flash('error', __("messages.Unfortunately, there was an error in editing the Popular Food"));
-        return redirect()->intended(route("dashboard"));
+        return redirect()->intended(route("popular-foods"));
     }
 
     public function cancel()

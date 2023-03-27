@@ -74,10 +74,10 @@ class CreateUpdateFood extends Component
 
         if($this->food) {
             session()->flash('message', __("messages.Food Created"));
-            return redirect()->intended(route("dashboard"));
+            return redirect()->intended(route("foods"));
         }
         session()->flash('error', __("messages.Unfortunately, there was an error in creating the food"));
-        return redirect()->intended(route("dashboard"));
+        return redirect()->intended(route("foods"));
     }
 
     public function editUpdateFood()
@@ -98,11 +98,11 @@ class CreateUpdateFood extends Component
             ]);
             $this->food->menus()->sync($this->menu_ids);
             session()->flash('message', __("messages.Food Edited"));
-            return redirect()->intended(route("dashboard"));
+            return redirect()->intended(route("foods"));
 
         }
         session()->flash('error', __("messages.Unfortunately, there was an error in editing the food"));
-        return redirect()->intended(route("dashboard"));
+        return redirect()->intended(route("foods"));
     }
 
     public function cancel()

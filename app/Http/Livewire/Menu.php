@@ -20,6 +20,11 @@ class Menu extends Component
         }
     }
 
+    public function getFood($food_id)
+    {
+            $this->emit("modalFood",$food_id);
+    }
+
     public function render()
     {
         $this->categories = Category::where("status", 1);

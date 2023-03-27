@@ -30,10 +30,9 @@
     <nav class="secondary_nav sticky_horizontal">
         <div class="container">
             <ul id="secondary_nav">
-                <li><a href="#section-1">پيش غذا</a></li>
-                <li><a href="#section-2">غذای اصلی</a></li>
-                <li><a href="#section-3">دسرها</a></li>
-                <li><a href="#section-4">نوشیدنی</a></li>
+                @foreach($categories as $category)
+                <li class="mt-4"><a href="#{{slug_seo($category->title)."_".$category->id}}">{{$category->title}}</a></li>
+                @endforeach
             </ul>
         </div>
         <span></span>
@@ -44,231 +43,27 @@
         <div class="container margin_detail">
             <div class="row">
                 <div class="col-lg-12 list_menu">
-                    <section id="section-1">
-                        <h4>پيش غذا</h4>
+                    @foreach($categories as $category)
+
+                    <section id="{{slug_seo($category->title)."_".$category->id}}">
+                        <h4>{{$category->title}}</h4>
                         <div class="row">
+                            @foreach($category->foods as $key=>$food)
                             <div class="col-md-4">
-                                <a class="menu_item modal_dialog" href="#modal-dialog">
-                                    <figure><img src="/asset/img/menu-thumb-placeholder.jpg"
-                                                 data-src="/asset/img/menu-thumb-1.jpg" alt="thumb" class="lazy"></figure>
-                                    <h3>1. انچیلاداهای مکزیکی</h3>
-                                    <p> این یک نوشته آزمایشی است که به طراحان.</p>
-                                    <strong>19,000 ت</strong>
+                                <a class="menu_item modal_dialog" >
+{{--                                    href="#exampleModal"--}}
+                                    <figure><img src="{{asset("images/foods/".$food->image)}}"
+                                                 data-src="{{asset("images/foods/".$food->image)}}" alt="thumb" class="lazy"></figure>
+                                    <h3>{{$key+1}}. {{$food->title}}</h3>
+                                    <p>{{$food->description}}</p>
+                                    <strong>@convertPrice($food->price) ت</strong>
                                 </a>
                             </div>
-                            <div class="col-md-4">
-                                <a class="menu_item modal_dialog" href="#modal-dialog">
-                                    <figure><img src="/asset/img/menu-thumb-placeholder.jpg"
-                                                 data-src="/asset/img/menu-thumb-2.jpg" alt="thumb" class="lazy"></figure>
-                                    <h3>2. فاجیتاس</h3>
-                                    <p> این یک نوشته آزمایشی است که به طراحان.</p>
-                                    <strong>19,000 ت</strong>
-                                </a>
-                            </div>
-                            <div class="col-md-4">
-                                <a class="menu_item modal_dialog" href="#modal-dialog">
-                                    <figure><img src="/asset/img/menu-thumb-placeholder.jpg"
-                                                 data-src="/asset/img/menu-thumb-3.jpg" alt="thumb" class="lazy"></figure>
-                                    <h3>3. رویال فاجیتاس</h3>
-                                    <p> این یک نوشته آزمایشی است که به طراحان.</p>
-                                    <strong>19,000 ت</strong>
-                                </a>
-                            </div>
-                            <div class="col-md-4">
-                                <a class="menu_item modal_dialog" href="#modal-dialog">
-                                    <figure><img src="/asset/img/menu-thumb-placeholder.jpg"
-                                                 data-src="/asset/img/menu-thumb-4.jpg" alt="thumb" class="lazy"></figure>
-                                    <h3>4. بسته بندی انچیلادا مرغ</h3>
-                                    <p> این یک نوشته آزمایشی است که به طراحان.</p>
-                                    <strong>19,000 ت</strong>
-                                </a>
-                            </div>
+                            @endforeach
                         </div>
                         <!-- /row -->
                     </section>
-                    <!-- /section -->
-                    <section id="section-2">
-                        <h4>غذای اصلی</h4>
-                        <div class="row">
-                            <div class="col-md-4">
-                                <a class="menu_item modal_dialog" href="#modal-dialog">
-                                    <figure><img src="/asset/img/menu-thumb-placeholder.jpg"
-                                                 data-src="/asset/img/menu-thumb-5.jpg" alt="thumb" class="lazy"></figure>
-                                    <h3>5. پنیر </h3>
-                                    <p> این یک نوشته آزمایشی است که به طراحان.</p>
-                                    <strong>19,000 ت</strong>
-                                </a>
-                            </div>
-                            <div class="col-md-4">
-                                <a class="menu_item modal_dialog" href="#modal-dialog">
-                                    <figure><img src="/asset/img/menu-thumb-placeholder.jpg"
-                                                 data-src="/asset/img/menu-thumb-6.jpg" alt="thumb" class="lazy"></figure>
-                                    <h3>6. چوریزو و پنیر</h3>
-                                    <p> این یک نوشته آزمایشی است که به طراحان.</p>
-                                    <strong>19,000 ت</strong>
-                                </a>
-                            </div>
-                            <div class="col-md-4">
-                                <a class="menu_item modal_dialog" href="#modal-dialog">
-                                    <figure><img src="/asset/img/menu-thumb-placeholder.jpg"
-                                                 data-src="/asset/img/menu-thumb-7.jpg" alt="thumb" class="lazy"></figure>
-                                    <h3>7. تاکو گوشت گاو</h3>
-                                    <p> این یک نوشته آزمایشی است که به طراحان.</p>
-                                    <strong>19,000 ت</strong>
-                                </a>
-                            </div>
-                            <div class="col-md-4">
-                                <a class="menu_item modal_dialog" href="#modal-dialog">
-                                    <figure><img src="/asset/img/menu-thumb-placeholder.jpg"
-                                                 data-src="/asset/img/menu-thumb-8.jpg" alt="thumb" class="lazy"></figure>
-                                    <h3>8. گوشت چرخ کرده دولایه</h3>
-                                    <p> این یک نوشته آزمایشی است که به طراحان.</p>
-                                    <strong>19,000 ت</strong>
-                                </a>
-                            </div>
-                            <div class="col-md-4">
-                                <a class="menu_item modal_dialog" href="#modal-dialog">
-                                    <figure><img src="/asset/img/menu-thumb-placeholder.jpg"
-                                                 data-src="/asset/img/menu-thumb-9.jpg" alt="thumb" class="lazy"></figure>
-                                    <h3>9. مرغ پیرس</h3>
-                                    <p> این یک نوشته آزمایشی است که به طراحان.</p>
-                                    <strong>19,000 ت</strong>
-                                </a>
-                            </div>
-                            <div class="col-md-4">
-                                <a class="menu_item modal_dialog" href="#modal-dialog">
-                                    <figure><img src="/asset/img/menu-thumb-placeholder.jpg"
-                                                 data-src="/asset/img/menu-thumb-10.jpg" alt="thumb" class="lazy"></figure>
-                                    <h3>10. بوریتو آل پاستور</h3>
-                                    <p> این یک نوشته آزمایشی است که به طراحان.</p>
-                                    <strong>19,000 ت</strong>
-                                </a>
-                            </div>
-                        </div>
-                        <!-- /row -->
-                    </section>
-                    <!-- /section -->
-                    <section id="section-3">
-                        <h4>دسرها</h4>
-                        <div class="row">
-                            <div class="col-md-4">
-                                <a class="menu_item modal_dialog" href="#modal-dialog">
-                                    <figure><img src="/asset/img/menu-thumb-placeholder.jpg"
-                                                 data-src="/asset/img/menu-thumb-5.jpg" alt="thumb" class="lazy"></figure>
-                                    <h3>5. پنیر </h3>
-                                    <p> این یک نوشته آزمایشی است که به طراحان.</p>
-                                    <strong>19,000 ت</strong>
-                                </a>
-                            </div>
-                            <div class="col-md-4">
-                                <a class="menu_item modal_dialog" href="#modal-dialog">
-                                    <figure><img src="/asset/img/menu-thumb-placeholder.jpg"
-                                                 data-src="/asset/img/menu-thumb-6.jpg" alt="thumb" class="lazy"></figure>
-                                    <h3>6. چوریزو و پنیر</h3>
-                                    <p> این یک نوشته آزمایشی است که به طراحان.</p>
-                                    <strong>19,000 ت</strong>
-                                </a>
-                            </div>
-                            <div class="col-md-4">
-                                <a class="menu_item modal_dialog" href="#modal-dialog">
-                                    <figure><img src="/asset/img/menu-thumb-placeholder.jpg"
-                                                 data-src="/asset/img/menu-thumb-7.jpg" alt="thumb" class="lazy"></figure>
-                                    <h3>7. تاکو گوشت گاو</h3>
-                                    <p> این یک نوشته آزمایشی است که به طراحان.</p>
-                                    <strong>19,000 ت</strong>
-                                </a>
-                            </div>
-                            <div class="col-md-4">
-                                <a class="menu_item modal_dialog" href="#modal-dialog">
-                                    <figure><img src="/asset/img/menu-thumb-placeholder.jpg"
-                                                 data-src="/asset/img/menu-thumb-8.jpg" alt="thumb" class="lazy"></figure>
-                                    <h3>8. گوشت چرخ کرده دولایه</h3>
-                                    <p> این یک نوشته آزمایشی است که به طراحان.</p>
-                                    <strong>19,000 ت</strong>
-                                </a>
-                            </div>
-                            <div class="col-md-4">
-                                <a class="menu_item modal_dialog" href="#modal-dialog">
-                                    <figure><img src="/asset/img/menu-thumb-placeholder.jpg"
-                                                 data-src="/asset/img/menu-thumb-9.jpg" alt="thumb" class="lazy"></figure>
-                                    <h3>9. مرغ پیرس</h3>
-                                    <p> این یک نوشته آزمایشی است که به طراحان.</p>
-                                    <strong>19,000 ت</strong>
-                                </a>
-                            </div>
-                            <div class="col-md-4">
-                                <a class="menu_item modal_dialog" href="#modal-dialog">
-                                    <figure><img src="/asset/img/menu-thumb-placeholder.jpg"
-                                                 data-src="/asset/img/menu-thumb-10.jpg" alt="thumb" class="lazy"></figure>
-                                    <h3>10. بوریتو آل پاستور</h3>
-                                    <p> این یک نوشته آزمایشی است که به طراحان.</p>
-                                    <strong>19,000 ت</strong>
-                                </a>
-                            </div>
-                        </div>
-                        <!-- /row -->
-                    </section>
-                    <!-- /section -->
-                    <section id="section-4">
-                        <h4>نوشیدنی</h4>
-                        <div class="row">
-                            <div class="col-md-4">
-                                <a class="menu_item modal_dialog" href="#modal-dialog">
-                                    <figure><img src="/asset/img/menu-thumb-placeholder.jpg"
-                                                 data-src="/asset/img/menu-thumb-5.jpg" alt="thumb" class="lazy"></figure>
-                                    <h3>11. کوکا کولا</h3>
-                                    <p> این یک نوشته آزمایشی است که به طراحان.</p>
-                                    <strong>12,000 ت</strong>
-                                </a>
-                            </div>
-                            <div class="col-md-4">
-                                <a class="menu_item modal_dialog" href="#modal-dialog">
-                                    <figure><img src="/asset/img/menu-thumb-placeholder.jpg"
-                                                 data-src="/asset/img/menu-thumb-6.jpg" alt="thumb" class="lazy"></figure>
-                                    <h3>12. آبجو کرونا</h3>
-                                    <p> این یک نوشته آزمایشی است که به طراحان.</p>
-                                    <strong>19,000 ت</strong>
-                                </a>
-                            </div>
-                            <div class="col-md-4">
-                                <a class="menu_item modal_dialog" href="#modal-dialog">
-                                    <figure><img src="/asset/img/menu-thumb-placeholder.jpg"
-                                                 data-src="/asset/img/menu-thumb-7.jpg" alt="thumb" class="lazy"></figure>
-                                    <h3>13. شراب قرمز</h3>
-                                    <p> این یک نوشته آزمایشی است که به طراحان.</p>
-                                    <strong>19,000 ت</strong>
-                                </a>
-                            </div>
-                            <div class="col-md-4">
-                                <a class="menu_item modal_dialog" href="#modal-dialog">
-                                    <figure><img src="/asset/img/menu-thumb-placeholder.jpg"
-                                                 data-src="/asset/img/menu-thumb-8.jpg" alt="thumb" class="lazy"></figure>
-                                    <h3>14.شراب سفید</h3>
-                                    <p> این یک نوشته آزمایشی است که به طراحان.</p>
-                                    <strong>19,000 ت</strong>
-                                </a>
-                            </div>
-                            <div class="col-md-4">
-                                <a class="menu_item modal_dialog" href="#modal-dialog">
-                                    <figure><img src="/asset/img/menu-thumb-placeholder.jpg"
-                                                 data-src="/asset/img/menu-thumb-9.jpg" alt="thumb" class="lazy"></figure>
-                                    <h3>15. آب معدنی</h3>
-                                    <p> این یک نوشته آزمایشی است که به طراحان.</p>
-                                    <strong>6,000 ت</strong>
-                                </a>
-                            </div>
-                            <div class="col-md-4">
-                                <a class="menu_item modal_dialog" href="#modal-dialog">
-                                    <figure><img src="/asset/img/menu-thumb-placeholder.jpg"
-                                                 data-src="/asset/img/menu-thumb-10.jpg" alt="thumb" class="lazy"></figure>
-                                    <h3>16. رد بول</h3>
-                                    <p> این یک نوشته آزمایشی است که به طراحان.</p>
-                                    <strong>12,000 ت</strong>
-                                </a>
-                            </div>
-                        </div>
-                        <!-- /row -->
-                    </section>
+                    @endforeach
                     <!-- /section -->
                 </div>
                 <!-- /col -->

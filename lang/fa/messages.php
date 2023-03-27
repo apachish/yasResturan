@@ -396,5 +396,6 @@ return [
     "Unfortunately, there was an error in creating the food"=>"متأسفانه در ایجاد غذا خطایی رخ داد",
     "Food Edited"=>"غذا ویرایش شد",
     "Unfortunately, there was an error in editing the food"=>"متأسفانه در ویرایش غذا خطایی رخ داد",
-    "Photo Preview"=>"پیش نمایش"
+    "Photo Preview"=>"پیش نمایش",
+    "There is no explanation"=>"توضیحی موجود نمی باشد"
 ];

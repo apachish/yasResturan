@@ -106,6 +106,15 @@
                         </tr>
                     @endforeach
                     </tbody>
+                    <tfoot>
+                    <tr>
+                        <td colspan="4" >
+                            {{ $foods->links() }}
+
+                        </td>
+                    </tr>
+
+                    </tfoot>
                 </table>
             </div>
         </div>

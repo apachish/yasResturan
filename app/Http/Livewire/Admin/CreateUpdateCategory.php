@@ -63,10 +63,10 @@ class CreateUpdateCategory extends Component
         if($category) {
             $category->menus()->sync($this->menu_ids);
             session()->flash('message', __("messages.Category Created"));
-            return redirect()->intended(route("dashboard"));
+            return redirect()->intended(route("categories"));
         }
         session()->flash('error', __("messages.Unfortunately, there was an error in creating the category"));
-        return redirect()->intended(route("dashboard"));
+        return redirect()->intended(route("categories"));
     }
 
     public function editUpdateCategory()
@@ -80,11 +80,11 @@ class CreateUpdateCategory extends Component
             ]);
             $this->category->menus()->sync($this->menu_ids?:[]);
             session()->flash('message', __("messages.Category Edited"));
-            return redirect()->intended(route("dashboard"));
+            return redirect()->intended(route("categories"));
 
         }
         session()->flash('error', __("messages.Unfortunately, there was an error in editing the category"));
-        return redirect()->intended(route("dashboard"));
+        return redirect()->intended(route("categories"));
 
     }
 

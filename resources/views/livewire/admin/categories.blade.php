@@ -83,6 +83,15 @@
                         </tr>
                     @endforeach
                     </tbody>
+                    <tfoot>
+                    <tr>
+                        <td colspan="4" >
+                            {{ $categories->links() }}
+
+                        </td>
+                    </tr>
+
+                    </tfoot>
                 </table>
             </div>
         </div>

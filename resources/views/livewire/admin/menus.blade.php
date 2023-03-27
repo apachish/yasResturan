@@ -96,6 +96,15 @@
                         </tr>
                     @endforeach
                     </tbody>
+                    <tfoot>
+                    <tr>
+                        <td colspan="4" >
+                            {{ $menus->links() }}
+
+                        </td>
+                    </tr>
+
+                    </tfoot>
                 </table>
             </div>
         </div>
