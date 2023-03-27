@@ -15,7 +15,11 @@
                         </div>
                         <div class="col-xl-8 col-lg-7 col-md-6 position-relative">
                             <div class="buttons clearfix">
+                                @if($type_menu=="en")
+                                <a href="{{route("food-menu")}}" target="blank" class="btn_hero "><i class="icon_documents"></i> فارسی</a>
+                                @else
                                 <a href="{{route("food-menu",["type_menu"=>"en"])}}" target="blank" class="btn_hero "><i class="icon_documents"></i> English</a>
+                                    @endif
                             </div>
                         </div>
                     </div>
