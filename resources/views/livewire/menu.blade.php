@@ -15,7 +15,7 @@
                         </div>
                         <div class="col-xl-8 col-lg-7 col-md-6 position-relative">
                             <div class="buttons clearfix">
-                                <a href="https://yasrest.ir/food-menu/en" target="blank" class="btn_hero "><i class="icon_documents"></i> English</a>
+                                <a href="{{route("food-menu",["type_menu"=>"en"])}}" target="blank" class="btn_hero "><i class="icon_documents"></i> English</a>
                             </div>
                         </div>
                     </div>
