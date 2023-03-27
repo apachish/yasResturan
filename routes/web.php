@@ -16,6 +16,8 @@ use Illuminate\Support\Facades\Route;
 Route::namespace("App\Http\Livewire")->group(function () {
     Route::get('/', Home::class)->name("home");
     Route::get('/home', Home::class);
+    Route::get('/food-menu/{type_menu?}', Menu::class)->name("food-menu");
+
 
 
 });
