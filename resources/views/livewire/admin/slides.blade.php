@@ -93,7 +93,7 @@
 
                     <tr>
                         <td colspan="4" >
-                            {{ $popular_foods->links() }}
+                            {{ $slides->links() }}
 
                         </td>
                     </tr>
