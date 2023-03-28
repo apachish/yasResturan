@@ -6,7 +6,7 @@
              data-version="5.4.8">
             <ul>
                 @foreach($slides as $slide)
-                <li data-index="rs-67" data-transition="fade" data-slotamount="default" data-hideafterloop="0"
+                <li data-index="rs-{{$slide->id}}" data-transition="fade" data-slotamount="default" data-hideafterloop="0"
                     data-hideslideonmobile="off" data-easein="default" data-easeout="default" data-masterspeed="600"
                     data-thumb="" data-rotate="0" data-saveperformance="off" data-title="Slide" data-param1=""
                     data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7=""
