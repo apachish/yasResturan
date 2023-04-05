@@ -60,7 +60,7 @@
                                                  data-src="{{asset("images/foods/".$food->image)}}" alt="thumb" class="lazy"></figure>
                                     <h3>{{$key+1}}. {{$food->title}}</h3>
                                     <p>{{$food->description}}</p>
-                                    <strong>@convertPrice($food->price) ت</strong>
+                                    <strong>@convertPrice($food->price) </strong>
                                 </a>
                             </div>
                             @endforeach
