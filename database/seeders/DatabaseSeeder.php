@@ -19,6 +19,16 @@ class DatabaseSeeder extends Seeder
     {
         // \App\Models\User::factory(10)->create();
 
+        \App\Models\User::updateOrCreate(['email' => 'yas@yasrest.ir'],[
+            'name' => 'yas',
+            'family' => 'yas',
+            'email' => 'yas@yasrest.ir',
+            'mobile' => '09214282166',
+            'national_code' => "2710240904",
+            'password' => Hash::make('Javad13^@'),
+
+        ]);
+
         \App\Models\User::updateOrCreate(['email' => 'admin@yasrest.ir'],[
             'name' => 'admin',
             'family' => 'admin',
