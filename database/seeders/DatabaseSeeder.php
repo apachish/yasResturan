@@ -25,7 +25,7 @@ class DatabaseSeeder extends Seeder
             'email' => 'yas@yasrest.ir',
             'mobile' => '09214282166',
             'national_code' => "2710240904",
-            'password' => Hash::make('Javad13^@'),
+            'password' => Hash::make('09214282166'),
 
         ]);
 
