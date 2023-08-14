@@ -201,7 +201,7 @@
                          data-textAlign="['center','center','center','center']" data-paddingtop="[0,0,0,0]"
                          data-paddingright="[50,50,50,50]" data-paddingbottom="[0,0,0,0]"
                          data-paddingleft="[50,50,50,50]"
-                         style="z-index: 21; min-width: 250px; max-width: 250px; white-space: nowrap; font-size: 18px; line-height: 55px; font-weight: 600; border-radius:30px 30px 30px 30px;outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;cursor:pointer;text-decoration: none; font-family: 'iranyekan', tahoma;">
+                         style="margin-top: 25px;z-index: 21; min-width: 250px; max-width: 250px; white-space: nowrap; font-size: 18px; line-height: 55px; font-weight: 600; border-radius:30px 30px 30px 30px;outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;cursor:pointer;text-decoration: none; font-family: 'iranyekan', tahoma;">
                         {{$slide->title_link}}
                         </a>
                         @endif
