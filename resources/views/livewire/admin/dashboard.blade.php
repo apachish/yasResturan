@@ -150,6 +150,7 @@
                     </a>
                 </div>
             </div>
+            @if(false)
             <div class="col-xl-3 col-sm-6 mb-3">
                 <div class="card dashboard text-white bg-warning o-hidden h-100">
                     <div class="card-body">
@@ -198,7 +199,9 @@
                     </a>
                 </div>
             </div>
+                @endif
         </div>
+        @if(false)
         <div class="row">
             <li class="breadcrumb-item active">مشتریان</li>
             <br>
@@ -228,6 +231,7 @@
                 </div>
             </div>
         </div>
+        @endif
         <!-- /cards -->
         <h2></h2>
     </div>
