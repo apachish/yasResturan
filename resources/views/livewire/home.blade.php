@@ -181,13 +181,13 @@
                          data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]"
                          style="z-index: 20; min-width: 480px; max-width: 480px; white-space: normal; font-size: 25px; line-height: 35px; font-weight: 400; color: #ffffff; font-family: 'iranyekan', tahoma;">
                         {!! $slide->description !!}
-                        <p>
+                        <p class="mt-2">
                             صبحانه از ساعت ۷:۳۰ الی ۱۱:۳۰
                         </p>
                         <p>
                             ناهار از ساعت ۱۲:۰۰ الی ۱۷:۳۰
                         </p>
-                        <p>
+                        <p class="mb-2">
                         شام از ساعت ۱۸:۰۰ الی ۲۳:۰۰</p>
                     </div>
                     @if($slide->title_link)
