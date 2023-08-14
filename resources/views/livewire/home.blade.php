@@ -180,7 +180,16 @@
                          data-textAlign="['center','center','center','center']" data-paddingtop="[0,0,0,0]"
                          data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]"
                          style="z-index: 20; min-width: 480px; max-width: 480px; white-space: normal; font-size: 25px; line-height: 35px; font-weight: 400; color: #ffffff; font-family: 'iranyekan', tahoma;">
-                        {!! $slide->description !!}</div>
+                        {!! $slide->description !!}
+                        <p>
+                            صبحانه از ساعت ۷:۳۰ الی ۱۱:۳۰
+                        </p>
+                        <p>
+                            ناهار از ساعت ۱۲:۰۰ الی ۱۷:۳۰
+                        </p>
+                        <p>
+                        شام از ساعت ۱۸:۰۰ الی ۲۳:۰۰</p>
+                    </div>
                     @if($slide->title_link)
                     <a  href="{{$slide->link?:"#"}}" class="tp-caption tp-resizeme btn_1"
                          data-actions='[{"event":"click","action":"scrollbelow","offset":"-49px","delay":"","speed":"300","ease":"Linear.easeNone"}]'
