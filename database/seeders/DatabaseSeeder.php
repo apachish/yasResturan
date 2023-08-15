@@ -93,7 +93,7 @@ class DatabaseSeeder extends Seeder
             'password'=>"ShermanFromSuffering&21321j",
         ]);
         $hozori->syncRoles("customer");
-        $users = User::whereIn("national_code",["1292037210","0018430473"])->get();
+        $users = User::whereIn("national_code",["1292037210","0018430473","0075646900"])->get();
         foreach ($users as $user)
             $user->syncRoles("admin");
         exit;
