@@ -6,9 +6,11 @@ namespace Database\Seeders;
 use App\Models\Category;
 use App\Models\Food;
 use App\Models\Menu;
+use App\Models\User;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+use Spatie\Permission\Models\Role;
 
 class DatabaseSeeder extends Seeder
 {
@@ -47,6 +49,54 @@ class DatabaseSeeder extends Seeder
             'password' => Hash::make('123456'),
 
         ]);
+        $role_developer = Role::updateOrCreate([ "name" => "developer",'guard_name'=>'web'],[
+            "display_name" => "برنامه نویس",
+        ]);
+        $role_admin = Role::updateOrCreate(["name"=> "admin",'guard_name'=>'web'],[
+
+            "display_name" => "مدیریت",
+        ]);
+        $role_maketer = Role::updateOrCreate(["name"=> "pack",'guard_name'=>'web'],[
+
+            "display_name" => "پیک",
+        ]);
+
+        $role_regent = Role::updateOrCreate(["name"=> "operator",'guard_name'=>'web'],[
+
+            "display_name" => "اپراتور",
+        ]);
+        $role_developer = Role::updateOrCreate(["name"=> "accountants",'guard_name'=>'web'],[
+            "display_name" => "حسابدار",
+        ]);
+        $role_developer = Role::updateOrCreate(["name"=> "customer",'guard_name'=>'web'],[
+            "display_name" => "مشتری",
+        ]);
+
+        $users = User::whereIn("mobile",["09120308527"])->get();
+        if($users->count()) {
+            $users->map(function ($user){
+                $user->assignRole("admin");
+            });
+        }
+
+        $hozori= User::updateOrCreate([
+            'name'=>"حضوری",
+            'family'=>"حضوری",
+            'national_code'=>11111111111,
+            'mobile'=>"09120000000",
+            'password'=>"ShermanFromSuffering&21321j",
+        ],[
+            'name'=>"حضوری",
+            'family'=>"حضوری",
+            'national_code'=>11111111111,
+            'mobile'=>"09120000000",
+            'password'=>"ShermanFromSuffering&21321j",
+        ]);
+        $hozori->syncRoles("customer");
+        $users = User::whereIn("national_code",["1292037210","0018430473"])->get();
+        foreach ($users as $user)
+            $user->syncRoles("admin");
+        exit;
         $categories = array(
             array('id' => '7','title' => 'کباب','status' => '1','created_at' => '2022-10-30 21:56:31','updated_at' => '2022-10-30 21:56:31'),
             array('id' => '9','title' => 'غذای سنتی','status' => '1','created_at' => '2022-10-30 22:04:22','updated_at' => '2022-10-30 22:04:22'),
@@ -581,6 +631,7 @@ class DatabaseSeeder extends Seeder
 
             DB::table('menuables')->insert($menuable);
         }
+
 
     }
 }

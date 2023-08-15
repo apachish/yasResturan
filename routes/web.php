@@ -24,11 +24,12 @@ Route::namespace("App\Http\Livewire")->group(function () {
 
 Route::middleware(['guest'])->namespace("App\Http\Livewire")->group(function () {
     Route::get('/login', Login::class)->name("login");
+    Route::get('/register', Register::class)->name("register");
 
 
 });
 
-Route::middleware(['auth'])->namespace("App\Http\Livewire\Admin")->prefix('admin')->group(function () {
+Route::middleware(['auth','check-panel'])->namespace("App\Http\Livewire\Admin")->prefix('admin')->group(function () {
     Route::get('/', Dashboard::class)->name('dashboard');
     Route::get('/menus', Menus::class)->name('menus');
     Route::get('/menus/create', CreateUpdateMenu::class)->name('menus-create');
@@ -53,6 +54,10 @@ Route::middleware(['auth'])->namespace("App\Http\Livewire\Admin")->prefix('admin
     Route::get('/users', Users::class)->name('users');
     Route::get('/users/create', CreateUpateUser::class)->name('users-create');
     Route::get('/users/edit/{user_id}', CreateUpateUser::class)->name('users-edit');
+
+
+});
+Route::middleware(['auth'])->namespace("App\Http\Livewire\Admin")->prefix('admin')->group(function () {
     Route::get('/logout', function (\Illuminate\Http\Request $request){
         \Illuminate\Support\Facades\Auth::logout();
         return redirect('/login');
